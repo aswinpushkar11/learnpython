@@ -1,4 +1,5 @@
 class Bank:
+    '''This is a mini bank application developed  by aswinpushkar11'''
     bankname='StateBank'
     def __init__(self,name,balance=0.0):
         self.name = name
@@ -14,9 +15,9 @@ class Bank:
         else:
             self.balance-=amount
             
-
+print(Bank.__doc__)
 print('Welcome to',Bank.bankname)
-name = input('Enter you name:').upper()
+name = input('Enter you name:').title()
 b=Bank(name)
 while True:
     print('1)Deposit - D\n2)Withdraw-W\n3)Exit E')
