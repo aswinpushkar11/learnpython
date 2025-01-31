@@ -1,31 +1,40 @@
-class Movie:
-    ''' This class gives Movie details'''
-    def __init__(self,title,hero,heroine):
-        self.title = title
-        self.hero = hero
-        self.heroine = heroine
-    def info(self):
-        
-        print('Movie Name:',self.title)
-        print('Hero Name:',self.hero)
-        print('Heroine Name:',self.heroine)
+class Car:
+    def __init__(self,name,model,version):
+        self.name = name
+        self.model = model
+        self.version = version
     
+    def getcarinfo(self):
+        print(f'The specifications of the car are:\n\tCompanyName:{self.name}\n\tModel:{self.model}\n\tVesrsion:{self.version}')
 
 
-print(Movie.__doc__)
-movie_list=[]
-while True:
-    print('Enter the following details')
-    title=input('Movie Name:')
-    hero=input('Hero:')
-    heroine=input('heroine:')
-    m=Movie(title,hero,heroine)
-    movie_list.append(m)
-    print('Movie added successfully')
-    option=input('Do you want to add more movies?[Yes/No]')
-    if option.lower()=='no' and option.lower()!='yes':
-        break
-print('Movie Details are:')
-for m in movie_list:
-    m.info()
-    print()
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+
+    def eatndrink(self):
+        print(f'{self.name} likes beer-biriyani')
+
+
+class Employee(Person):
+    def __init__(self, name, age, eno, esal, car):
+        super().__init__(name, age)
+        self.eno = eno
+        self.esal = esal
+        self.car = car
+    def getworkinfo(self):
+        print(f'{self.name} is a Python Developer')
+    def getinfo(self):
+        print('Employee Information:')
+        print(f'\tEmployee name :{self.name}\n\tEmployeeAge:{self.age}\n\tEmployeeNo={self.eno}\n\tEmployeeSal={self.esal}')
+        print()
+        self.car.getcarinfo()
+
+c=Car('Skoda','Slavia','1.5T')
+e=Employee('Aswin',29,1224324,'28k',c)
+e.eatndrink()
+e.getworkinfo()
+e.getinfo()
+# e.car.getcarinfo()
+
