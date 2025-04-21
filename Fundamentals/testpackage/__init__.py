@@ -1,0 +1,1 @@
+print('Hello Aswin,this line is printed from __init__.py')
